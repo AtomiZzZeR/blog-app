@@ -1,10 +1,9 @@
 import React from 'react';
+import Styled from './PersonalAreaPage.styles';
 
 const PersonalAreaPage = () => {
   return (
-    <div>
-      PersonalAreaPage
-    </div>
+    <Styled.PersonalAreaPage />
   );
 }
 

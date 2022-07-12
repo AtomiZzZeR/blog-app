@@ -5,12 +5,11 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import PersonalArea from './pages/PersonalAreaPage';
 import NotFoundPage from './pages/NotFoundPage';
-
-import Layout from './components/Layout/Layout';
+import { Layout } from './components/Layout';
 
 function App() {
-  return (    
-    <div className={'App'}>
+  return (
+    <>
       <Routes>
         <Route
           path="/"
@@ -25,7 +24,7 @@ function App() {
             element={<LoginPage />}
           />
           <Route
-            path="personal"
+            path="profile"
             element={<PersonalArea />}
           />
           <Route
@@ -34,7 +33,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 }
 

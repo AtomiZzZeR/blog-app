@@ -13,9 +13,16 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
-  body {
+  html {
     background-color: #222;
-    box-shadow: inset 0px 0px 20px 1px #000;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+
+  a {
+    text-decoration: none;
   }
   
 `;

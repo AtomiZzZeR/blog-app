@@ -1,10 +1,9 @@
 import React from 'react';
+import Styled from './HomePage.styles';
 
 const HomePage = () => {
   return (
-    <div>
-      HomePage
-    </div>
+    <Styled.Home>HomePage</Styled.Home>
   );
 }
 

@@ -1,18 +1,34 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Styled from './Layout.styles';
 
 const Layout = () => {
   return (
     <>
-      <header>
-        <Link to="/">link home</Link>
-        <Link to="/login">link login</Link>
-        <Link to="/personal">link personal</Link>
-      </header>
+      <Styled.Wrapper>
+        <Styled.Header>
 
-      <main>
-        <Outlet />
-      </main>
+          <Styled.BoxForTitleAndHome>
+            <Link to="/">
+              <Styled.SiteTitle>Blog App</Styled.SiteTitle>
+            </Link>
+            <Link to="/">
+              <Styled.HomePageLink>Home</Styled.HomePageLink>
+            </Link>
+          </Styled.BoxForTitleAndHome>
+
+          {/* Add post - link */}
+
+          <Link to="/profile">
+            <Styled.ProfilePageLink>Profile</Styled.ProfilePageLink>
+          </Link>
+
+        </Styled.Header>
+
+        <Styled.Main>
+          <Outlet />
+        </Styled.Main>
+      </Styled.Wrapper>
     </>
   );
 }

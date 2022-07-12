@@ -1,10 +1,9 @@
 import React from 'react';
+import Styled from './LoginPage.styles';
 
 const LoginPage = () => {
   return (
-    <div>
-      LoginPage
-    </div>
+    <Styled.Login />
   );
 }
 

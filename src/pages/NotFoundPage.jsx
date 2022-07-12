@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Styled from './NotFoundPage.styles';
 
 const NotFoundPage = () => {
   return (
-    <div>
-      This page is not found. Please link <link to="/">home</link>
-    </div>
+    <Styled.NotFound>
+      This page is not found. Please link <Link to="/">home</Link>
+    </Styled.NotFound>
   );
 }
 
