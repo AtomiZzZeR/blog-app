@@ -23,6 +23,10 @@ const Layout = () => {
             <Styled.ProfilePageLink>Profile</Styled.ProfilePageLink>
           </Link>
 
+          <Link to="/pr">
+            link
+          </Link>
+
         </Styled.Header>
 
         <Styled.Main>

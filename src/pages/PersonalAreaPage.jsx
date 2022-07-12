@@ -3,7 +3,7 @@ import Styled from './PersonalAreaPage.styles';
 
 const PersonalAreaPage = () => {
   return (
-    <Styled.PersonalAreaPage />
+    <Styled.PersonalArea />
   );
 }
 

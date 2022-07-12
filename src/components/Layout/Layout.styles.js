@@ -79,7 +79,6 @@ const Main = styled.main`
   flex: 1 1 auto;
   margin: 15px 0px;
   padding: 0px 30px;
-  border: 2px solid red;
 `;
 
 const Container = styled.div``;
