@@ -6,31 +6,33 @@ import LoginPage from './pages/LoginPage';
 import PersonalArea from './pages/PersonalAreaPage';
 import NotFoundPage from './pages/NotFoundPage';
 
+import Layout from './components/Layout/Layout';
+
 function App() {
-  return (
+  return (    
     <div className={'App'}>
-      <header>
-        <Link to="/">link home</Link>
-        <Link to="/login">link login</Link>
-        <Link to="/personal">link personal</Link>
-      </header>
       <Routes>
         <Route
           path="/"
-          element={<HomePage />}
-        />
-        <Route
-          path="/login"
-          element={<LoginPage />}
-        />
-        <Route
-          path="/personal"
-          element={<PersonalArea />}
-        />
-        <Route
-          path="*"
-          element={<NotFoundPage />}
-        />
+          element={<Layout />}
+        >
+          <Route
+            index
+            element={<HomePage />}
+          />
+          <Route
+            path="login"
+            element={<LoginPage />}
+          />
+          <Route
+            path="personal"
+            element={<PersonalArea />}
+          />
+          <Route
+            path="*"
+            element={<NotFoundPage />}
+          />
+        </Route>
       </Routes>
     </div>
   );
