@@ -27,6 +27,10 @@ const Layout = () => {
             link
           </Link>
 
+          <Link to="/addPost">
+            addPost
+          </Link>
+
         </Styled.Header>
 
         <Styled.Main>
