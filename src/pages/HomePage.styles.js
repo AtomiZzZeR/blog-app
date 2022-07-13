@@ -1,18 +1,20 @@
 import styled from 'styled-components';
 
-const Home = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100%;
-  font-size: 5em;
+  font-size: 1em;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
 `;
 
+const Inner = styled.div``;
+
 const StyledHomePage = {
-  Home,
+  Wrapper,
+  Inner,
 };
 
 export default StyledHomePage;
