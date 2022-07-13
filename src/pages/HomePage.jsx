@@ -3,7 +3,7 @@ import Post from '../components/Post/Post';
 import Styled from './HomePage.styles';
 import { v4 as uuid } from 'uuid';
 import PostList from '../components/PostList/PostList';
-import AddPostPage from './AddPostPage';
+import AddPost from '../components/AddPost/AddPost';
 
 
 const HomePage = ({ newPost }) => {
@@ -19,7 +19,7 @@ const HomePage = ({ newPost }) => {
 
   return (
     <Styled.Wrapper>
-      <AddPostPage create={createPost} />
+      <AddPost create={createPost} />
 
       <PostList posts={posts} />
     </Styled.Wrapper>

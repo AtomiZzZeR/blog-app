@@ -5,7 +5,6 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import PersonalAreaPage from './pages/PersonalAreaPage';
-import AddPostPage from './pages/AddPostPage';
 
 import { Layout } from './components/Layout';
 
@@ -28,10 +27,6 @@ function App() {
           <Route
             path="profile"
             element={<PersonalAreaPage />}
-          />
-          <Route
-            path="addPost"
-            element={<AddPostPage />}
           />
           <Route
             path="*"

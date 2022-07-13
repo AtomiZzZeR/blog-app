@@ -4,8 +4,9 @@ const Form = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 300px;
   flex-direction: column;
+  margin: 0px 0px 30px 0px;
 `;
 
 const Input = styled.input`
@@ -18,10 +19,10 @@ const Button = styled.button`
   font-size: 2em;
 `;
 
-const StyledAddPostPage = {
+const StyledAddPost = {
   Form,
   Input,
   Button,
 };
 
-export default StyledAddPostPage;
+export default StyledAddPost;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Styled from './AddPostPage.styles';
+import Styled from './AddPost.styles';
 import { v4 as uuid } from "uuid";
 
-const AddPostPage = ({ create }) => {
+const AddPost = ({ create }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -37,4 +37,4 @@ const AddPostPage = ({ create }) => {
   );
 }
 
-export default AddPostPage;
+export default AddPost;
