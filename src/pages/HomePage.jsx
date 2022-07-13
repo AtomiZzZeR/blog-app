@@ -7,19 +7,19 @@ import AddPostPage from './AddPostPage';
 
 
 const HomePage = ({ newPost }) => {
-  const [posts, SetPosts] = useState([
+  const [posts, setPosts] = useState([
     { id: uuid(), title: 'JavaScript', description: 'JavaScript is very cool' },
     { id: uuid(), title: 'JavaScript', description: 'JavaScript is very cool' },
     { id: uuid(), title: 'JavaScript', description: 'JavaScript is very cool' },
   ]);
 
-  const addNewPost = () => {
-    SetPosts([...posts, newPost])
+  const createPost = (newPost) => {
+    setPosts([...posts, newPost]);
   }
 
   return (
     <Styled.Wrapper>
-      <AddPostPage title={'Python'} body={'Desson'} posts={posts} />
+      <AddPostPage create={createPost} />
 
       <PostList posts={posts} />
     </Styled.Wrapper>
