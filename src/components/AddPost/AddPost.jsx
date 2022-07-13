@@ -30,9 +30,26 @@ const AddPost = ({ create }) => {
 
   return (
     <Styled.Form>
-      <Styled.Input type={'text'} placeholder={'Название поста'} value={title} onChange={handleChangeTitle} />
-      <Styled.Input type={'text'} placeholder={'Описание поста'} value={description} onChange={handleChangeDescription} />
-      <Styled.Button onClick={addNewPost}>Отправить</Styled.Button>
+      <Styled.Title>Create post</Styled.Title>
+      <div>
+        <span>Post title:</span>
+        <Styled.InputText type={'text'} placeholder={'Post title'} value={title} onChange={handleChangeTitle} />
+      </div>
+      <div>
+        <span>Post topic:</span>
+        <Styled.InputText type={'text'} placeholder={'Post topic'} />
+      </div>
+      <div>
+        <span>Image upload:</span>
+        <Styled.InputFile type={'file'} />
+      </div>
+      <div>
+        <span>Post description:</span>
+        <Styled.InputText type={'text'} placeholder={'Post description'} value={description} onChange={handleChangeDescription} />
+      </div>
+      <Styled.BoxForButton>
+        <Styled.Button onClick={addNewPost}>Create</Styled.Button>
+      </Styled.BoxForButton>
     </Styled.Form>
   );
 }

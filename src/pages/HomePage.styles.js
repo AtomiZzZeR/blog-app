@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   height: 100%;
   font-size: 1em;
   color: #fff;
-  text-transform: uppercase;
   font-weight: bold;
 `;
 

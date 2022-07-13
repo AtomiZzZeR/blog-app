@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import Post from '../components/Post/Post';
 import Styled from './HomePage.styles';
 import { v4 as uuid } from 'uuid';
-import PostList from '../components/PostList/PostList';
-import AddPost from '../components/AddPost/AddPost';
+import { AddPost } from '../components/AddPost';
+import { PostList } from '../components/PostList';
 
 
 const HomePage = ({ newPost }) => {

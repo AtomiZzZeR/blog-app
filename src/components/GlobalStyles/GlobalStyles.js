@@ -24,6 +24,11 @@ const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  .focus,
+  .active {
+    outline: none;
+  }
   
 `;
 
