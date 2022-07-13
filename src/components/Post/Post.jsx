@@ -1,5 +1,6 @@
 import React from 'react';
 import Styled from './Post.styles';
+import { LikeSystem } from '../LikeSystem';
 
 const Post = (props) => {
   return (
@@ -15,6 +16,7 @@ const Post = (props) => {
       <Styled.Btns>
         <button>Удалить</button>
       </Styled.Btns>
+      <LikeSystem />
     </Styled.Post>
   );
 }
