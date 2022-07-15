@@ -7,6 +7,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import PersonalAreaPage from './pages/PersonalAreaPage';
 
 import { Layout } from './components/Layout';
+import AddPostPage from './pages/AddPostPage';
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           <Route
             path="login"
             element={<LoginPage />}
+          />
+          <Route
+            path="addPost"
+            element={<AddPostPage />}
           />
           <Route
             path="profile"

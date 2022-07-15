@@ -18,8 +18,6 @@ const HomePage = ({ newPost }) => {
 
   return (
     <Styled.Wrapper>
-      <AddPost create={createPost} />
-
       <PostList posts={posts} />
     </Styled.Wrapper>
   );
