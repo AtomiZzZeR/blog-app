@@ -12,7 +12,14 @@ const initialState = {
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
-  reducers: {},
+  reducers: {
+    addPost: (state, action) => {
+      state.postList.push(action.payload);
+    },
+    deletePost: (state, action) => {
+      state.postList.splice(action.payload - 1, 1);
+    },
+  },
 });
 
 const postsActionList = postsSlice.actions;
