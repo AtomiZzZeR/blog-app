@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { postsActionList } from '../../features/posts/postsSlice';
 import Styled from './LikeSystem.style';
 
-const LikeSystemStyle = () => {
-  const [likes, setLikes] = useState(0);
+const LikeSystemStyle = ({ post: { id, likeList } }) => {
+  const dispatch = useDispatch();
 
-  const handleChange = () => {
-    let num = +likes;
-
-    if (num === 1) {
-      setLikes(0);
-    } else {
-      setLikes(1);
-    }
-
+  const handleClick = () => {
+    dispatch(postsActionList.toggleLike({ userId: "3", postId: id }));
   }
 
   return (
     <Styled.Wrapper>
-      <Styled.Badge onClick={handleChange} />
-      <Styled.Counter>{likes}</Styled.Counter>
+      <Styled.Badge onClick={handleClick} />
+      <Styled.Counter>{likeList}</Styled.Counter>
     </Styled.Wrapper>
   );
 }
