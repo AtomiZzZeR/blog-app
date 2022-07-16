@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import LikeSystem from '../LikeSystem/LikeSystem';
 import { postsActionList } from '../../features/posts/postsSlice';
 
-const Post = ({ number, ...props }) => {
+const Post = ({ number, post }) => {
   const dispatch = useDispatch();
 
   const handleDeletePostClick = () => {
@@ -15,16 +15,16 @@ const Post = ({ number, ...props }) => {
     <Styled.Post>
       <Styled.Content>
         <h2>
-          {number}. {props.post.title}
+          {number}. {post.title}
         </h2>
         <div>
-          {props.post.description}
+          {post.description}
         </div>
       </Styled.Content>
       <Styled.Btns>
         <button onClick={handleDeletePostClick}>Удалить</button>
       </Styled.Btns>
-      <LikeSystem />
+      <LikeSystem post={post} />
     </Styled.Post>
   );
 }
