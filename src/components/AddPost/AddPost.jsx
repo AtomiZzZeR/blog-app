@@ -3,6 +3,7 @@ import Styled from './AddPost.styles';
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from 'uuid';
 import { postsActionList } from '../../features/posts/postsSlice';
+import { postsValidationHelpers } from "../../utils/helpers";
 
 const AddPost = () => {
   const dispatch = useDispatch();
@@ -14,8 +15,6 @@ const AddPost = () => {
     }
   );
 
-  const { title, description } = post;
-
   const handleChangePostTitle = (event) => {
     setPost({ ...post, title: event.target.value })
     sessionStorage.setItem('postTitle', event.target.value);
@@ -26,32 +25,26 @@ const AddPost = () => {
   }
 
   const handleAddPostClick = () => {
-    if (title === '' && description === '') {
-      alert("Error! Empty title and description of the post");
-      return;
-    }
-    if (title === '') {
-      alert("Error! Empty title of the post");
-      return;
-    }
-    if (description === '') {
-      alert("Error! Empty description of the post");
-      return;
-    }
-    if (title.length !== '' && title.length <= 3) {
-      alert("Error! Title must contain more than 3 letters");
-      return;
-    }
-    if (description.length !== '' && description.length <= 10) {
-      alert("Error! Description must contain more than 10 letters");
-      return
-    }
+    const { validatePost } = postsValidationHelpers;
 
-    dispatch(postsActionList.addPost({ id: uuid(), title, description }));
+    const createdPost = { id: uuid(), ...post };
 
-    setPost({ title: '', description: '' });
+    const error = validatePost(createdPost);
 
-    alert('Post added to the list');
+    if (error) {
+      alert(error);
+
+      return;
+    } else {
+      dispatch(postsActionList.addPost(createdPost));
+
+      sessionStorage.setItem('postTitle', '');
+      sessionStorage.setItem('postDescription', '');
+
+      setPost({ title: '', description: '' });
+
+      alert('Post added to the list');
+    }
   }
 
   return (
