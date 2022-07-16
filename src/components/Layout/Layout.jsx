@@ -44,6 +44,7 @@ const Layout = () => {
         <Styled.Main>
           <Outlet />
         </Styled.Main>
+      
       </Styled.Wrapper>
     </>
   );

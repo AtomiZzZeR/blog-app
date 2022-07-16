@@ -27,11 +27,10 @@ const BoxForTitleAndHome = styled.div`
 `;
 
 const SiteTitle = styled.h1`
-  padding: 7px 11px 7px 11px;
+  padding: 7px 7px 7px 16px;
   color: #222;
   font-weight: bold;
   font-size: 1.65em;
-
   transition: 0.5s;
   border-radius: 100px 0px 0px 100px;
   border-right: 2.5px solid #222;
@@ -43,7 +42,7 @@ const SiteTitle = styled.h1`
 `;
 
 const HomePageLink = styled.div`
-  padding: 7px 10px 7px 11px;
+  padding: 7px 15px 7px 8px;
   color: #222;
   font-weight: bold;
   font-size: 1.65em;
@@ -63,19 +62,11 @@ const AddPostPageLink = styled.div`
   color: #222;
   font-weight: bold;
   font-size: 1.65em;
-
   transition: 0.5s;
-
-  &:hover {
-    color: #556270;
-    background-color: #222;
-    border-radius: 100px;
-    border-bottom: 5px solid #333;
-  }
 `;
 
 const ProfilePageLink = styled.div`
-  padding: 6px 10px;
+  padding: 7px 13px 4px;
   color: #222;
   font-weight: bold;
   font-size: 1.65em;
