@@ -1,7 +1,7 @@
 import React from 'react';
 import Styled from './Post.styles';
-import { LikeSystem } from '../LikeSystem';
 import { useDispatch } from 'react-redux';
+import LikeSystem from '../LikeSystem/LikeSystem';
 import { postsActionList } from '../../features/posts/postsSlice';
 
 const Post = ({ number, ...props }) => {
