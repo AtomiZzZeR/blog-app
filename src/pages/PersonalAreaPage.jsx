@@ -3,7 +3,9 @@ import Styled from './PersonalAreaPage.styles';
 
 const PersonalAreaPage = () => {
   return (
-    <Styled.PersonalArea />
+    <Styled.PersonalArea>
+      (Здесь должен быть личный кабинет пользователя)
+    </Styled.PersonalArea>
   );
 }
 

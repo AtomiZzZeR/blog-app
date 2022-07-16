@@ -1,13 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
-import PersonalAreaPage from './pages/PersonalAreaPage';
-
 import Layout from './components/Layout/Layout';
-import AddPostPage from './pages/AddPostPage';
+
+import { routes } from './router/routes';
 
 function App() {
   return (
@@ -17,26 +13,13 @@ function App() {
           path="/"
           element={<Layout />}
         >
-          <Route
-            index
-            element={<HomePage />}
-          />
-          <Route
-            path="login"
-            element={<LoginPage />}
-          />
-          <Route
-            path="addPost"
-            element={<AddPostPage />}
-          />
-          <Route
-            path="profile"
-            element={<PersonalAreaPage />}
-          />
-          <Route
-            path="*"
-            element={<NotFoundPage />}
-          />
+          {routes.map((route) => (
+            <Route
+              path={route.path}
+              element={route.element}
+              key={null}
+            />
+          ))}
         </Route>
       </Routes>
     </>
