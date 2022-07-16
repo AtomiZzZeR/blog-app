@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  postList: JSON.parse(localStorage.getItem('postList')),
+  postList: JSON.parse(localStorage.getItem('postList')) || [{}],
 };
 
 const postsSlice = createSlice({

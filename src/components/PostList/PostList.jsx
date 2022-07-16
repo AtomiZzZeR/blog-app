@@ -14,7 +14,7 @@ const PostList = () => {
       <Styled.Title>Список постов</Styled.Title>
       {
         postList.map((post, index) =>
-          <Post post={post} number={index + 1} key={post.id} />
+          <Post post={post} number={index + 1} key={index} />
         )
       }
     </Styled.Wrapper>

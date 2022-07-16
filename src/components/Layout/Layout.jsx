@@ -2,10 +2,15 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 import { authActionList, selectAuth } from '../../features/auth/authSlice';
+import Loader from '../Loader/Loader';
 import Styled from './Layout.styles';
 
 const Layout = () => {
   const dispatch = useDispatch();
+
+  const authSelector = useSelector(selectAuth);
+
+  const { isLoading } = authSelector;
 
   const handleLogOutClick = () => {
     dispatch(authActionList.logOut());
@@ -33,8 +38,6 @@ const Layout = () => {
           <Link to="/profile">
             <Styled.ProfilePageLink>Profile</Styled.ProfilePageLink>
           </Link>
-
-
 
         </Styled.Header>
 

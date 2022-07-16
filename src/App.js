@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
+import Loader from './components/Loader/Loader';
 import { authActionList, selectAuth } from './features/auth/authSlice';
 
 import { privateRoutes, publicRoutes } from './router/routes';
@@ -10,17 +11,23 @@ import { privateRoutes, publicRoutes } from './router/routes';
 function App() {
   const dispatch = useDispatch();
 
+  const authSelector = useSelector(selectAuth);
+
+  const { isAuth, isLoading } = authSelector;
+
   useEffect(() => {
     if (localStorage.getItem('auth')) {
       dispatch(authActionList.logIn());
     } else {
       dispatch(authActionList.logOut());
     }
+
+    dispatch(authActionList.loading());
   }, []);
 
-  const authSelector = useSelector(selectAuth);
-
-  const { isAuth } = authSelector;
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
