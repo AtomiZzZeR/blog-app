@@ -91,6 +91,12 @@ const ProfilePageLink = styled.div`
   }
 `;
 
+const LogOutBtn = styled.button`
+  font-size: 1.8em;
+  width: 100px;
+  border-radius: 30px;
+`;
+
 const Main = styled.main`
   flex: 1 1 auto;
   margin: 15px 0px;
@@ -109,6 +115,7 @@ const StyledLayout = {
   HomePageLink,
   AddPostPageLink,
   ProfilePageLink,
+  LogOutBtn,
 };
 
 export default StyledLayout;

@@ -4,10 +4,10 @@ import LoginPage from '../pages/LoginPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PersonalAreaPage from '../pages/PersonalAreaPage';
 
-export const routes = [
+export const privateRoutes = [
   { path: '', element: <HomePage /> },
   { path: 'addPost', element: <AddPostPage /> },
-  { path: 'login', element: <LoginPage /> },
   { path: 'profile', element: <PersonalAreaPage /> },
-  { path: '*', element: <NotFoundPage /> },
 ];
+
+export const publicRoutes = [{ path: 'login', element: <LoginPage /> }];
