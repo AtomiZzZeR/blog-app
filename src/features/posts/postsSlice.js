@@ -1,13 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  postList: JSON.parse(localStorage.getItem('postList')) || [{}],
+  postList: [],
 };
 
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
+    addPostList: (state) => {
+      state.postList = JSON.parse(localStorage.getItem('postList'));
+      localStorage.setItem('postList', JSON.stringify(state.postList));
+    },
     addPost: (state, action) => {
       state.postList.push(action.payload);
       localStorage.setItem('postList', JSON.stringify(state.postList));
