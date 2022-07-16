@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styled from './Post.styles';
 import { useDispatch } from 'react-redux';
 import LikeSystem from '../LikeSystem/LikeSystem';
@@ -11,14 +11,30 @@ const Post = ({ number, ...props }) => {
     dispatch(postsActionList.deletePost(number));
   }
 
+  const [postTitle, setPostTitle] = useState(localStorage.getItem('postTitle') || props.post.title);
+  const [postDescription, setPostDescription] = useState(props.post.description);
+
+  const [isTitle, setIsTitle] = useState(false);
+
   return (
     <Styled.Post>
       <Styled.Content>
-        <h2>
-          {number}. {props.post.title}
-        </h2>
         <div>
-          {props.post.description}
+          {number}.
+          {
+            isTitle ? <input
+              value={postTitle}
+              onChange={(e) => {
+                setPostTitle(e.target.value);
+                localStorage.setItem('postTitle', e.target.value);
+              }
+              }
+              onBlur={() => setIsTitle(false)}
+            /> : <div onClick={() => setIsTitle(true)}>{postTitle}</div>
+          }
+        </div>
+        <div>
+          {postDescription}
         </div>
       </Styled.Content>
       <Styled.Btns>
