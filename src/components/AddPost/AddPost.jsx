@@ -49,9 +49,6 @@ const AddPost = () => {
 
     dispatch(postsActionList.addPost({ id: uuid(), title, description }));
 
-    sessionStorage.setItem('postTitle', '');
-    sessionStorage.setItem('postDescription', '');
-
     setPost({ title: '', description: '' });
 
     alert('Post added to the list');
