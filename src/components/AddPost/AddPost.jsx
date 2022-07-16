@@ -10,18 +10,24 @@ const AddPost = () => {
 
   const [post, setPost] = useState(
     {
-      title: sessionStorage.getItem('postTitle') || '',
-      description: sessionStorage.getItem('postDescription') || '',
+      title: JSON.parse(sessionStorage.getItem('post')).title || '',
+      description: JSON.parse(sessionStorage.getItem('post')).description || '',
     }
   );
 
   const handleChangePostTitle = (event) => {
     setPost({ ...post, title: event.target.value })
-    sessionStorage.setItem('postTitle', event.target.value);
+    sessionStorage.setItem(
+      'post',
+      JSON.stringify({ ...JSON.parse(sessionStorage.getItem("post")), title: event.target.value })
+    );
   }
   const handleChangePostDescription = (event) => {
     setPost({ ...post, description: event.target.value });
-    sessionStorage.setItem('postDescription', event.target.value);
+    sessionStorage.setItem(
+      'post',
+      JSON.stringify({ ...JSON.parse(sessionStorage.getItem("post")), description: event.target.value })
+    );
   }
 
   const handleAddPostClick = () => {
@@ -38,8 +44,7 @@ const AddPost = () => {
     } else {
       dispatch(postsActionList.addPost(createdPost));
 
-      sessionStorage.setItem('postTitle', '');
-      sessionStorage.setItem('postDescription', '');
+      sessionStorage.setItem('post', JSON.stringify({ title: "", description: "" }))
 
       setPost({ title: '', description: '' });
 
