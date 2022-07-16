@@ -7,7 +7,7 @@ const LikeSystemStyle = () => {
   const handleChange = () => {
     let num = +likes;
 
-    if (num == 1) {
+    if (num === 1) {
       setLikes(0);
     } else {
       setLikes(1);
