@@ -58,6 +58,22 @@ const HomePageLink = styled.div`
   }
 `;
 
+const AddPostPageLink = styled.div`
+  padding: 6px 10px;
+  color: #222;
+  font-weight: bold;
+  font-size: 1.65em;
+
+  transition: 0.5s;
+
+  &:hover {
+    color: #556270;
+    background-color: #222;
+    border-radius: 100px;
+    border-bottom: 5px solid #333;
+  }
+`;
+
 const ProfilePageLink = styled.div`
   padding: 6px 10px;
   color: #222;
@@ -91,6 +107,7 @@ const StyledLayout = {
   BoxForTitleAndHome,
   SiteTitle,
   HomePageLink,
+  AddPostPageLink,
   ProfilePageLink,
 };
 

@@ -7,7 +7,6 @@ const Layout = () => {
     <>
       <Styled.Wrapper>
         <Styled.Header>
-
           <Styled.BoxForTitleAndHome>
             <Link to="/">
               <Styled.SiteTitle>Blog App</Styled.SiteTitle>
@@ -17,7 +16,9 @@ const Layout = () => {
             </Link>
           </Styled.BoxForTitleAndHome>
 
-          {/* Add post - link */}
+          <Link to="/addPost">
+            <Styled.AddPostPageLink>Add Post</Styled.AddPostPageLink>
+          </Link>
 
           <Link to="/profile">
             <Styled.ProfilePageLink>Profile</Styled.ProfilePageLink>
