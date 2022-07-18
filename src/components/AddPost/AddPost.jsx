@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import Styled from './AddPost.styles';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuid } from 'uuid';
 import { postsActionList } from '../../features/posts/postsSlice';
 import { postsValidationHelpers } from "../../utils/helpers";
+import { selectSession } from '../../features/session/sessionSlice';
 
 const AddPost = () => {
   const dispatch = useDispatch();
+
+  const sessionSelector = useSelector(selectSession);
+
+  const { userId } = sessionSelector;
 
   const [post, setPost] = useState(
     {
@@ -15,6 +20,7 @@ const AddPost = () => {
       likeList: [],
       commentList: [], // userId, id, content
       creatingData: 0,
+      userId,
     }
   );
 

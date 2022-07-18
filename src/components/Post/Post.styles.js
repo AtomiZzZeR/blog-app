@@ -21,13 +21,20 @@ const Description = styled.div`
 
 const BtnDelete = styled.button`
   position: absolute;
-  right: 0px;
-  top: 35px;
-  border-radius: 10px 50% 10px 10px;
+  right: 15px;
+  top: 43px;
+  border-radius: 10px 10px 10px 10px;
   width: 50px;
   height: 50px;
   border: 2px solid #ff6b6b;
   background-color: #222;
+  cursor: pointer;
+
+  & i {
+    display: inline-block;
+    font-size: 2.5em;
+    color: #ff6b6b;
+  }
 `;
 
 const TitleComments = styled.div`

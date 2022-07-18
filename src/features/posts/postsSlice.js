@@ -17,7 +17,10 @@ const postsSlice = createSlice({
       state.postList.push(action.payload);
       localStorage.setItem('postList', JSON.stringify(state.postList));
     },
-    deletePost: (state, action) => {
+    deletePost: (state, { payload }) => {
+      const { postId } = payload;
+
+      state.postList = state.postList.filter((post) => post.id !== postId);
       localStorage.setItem('postList', JSON.stringify(state.postList));
     },
     toggleLike: (state, { payload }) => {

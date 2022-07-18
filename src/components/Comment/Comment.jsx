@@ -13,7 +13,7 @@ const Comment = ({ post }) => {
 
   return post.commentList.map(({ id, content, userId, creatingData }) =>
     <Styled.Wrapper key={creatingData}>
-      <div>Пользователь {userId}</div>
+      <div>Пользователь: id{userId}</div>
       {content}
       <br />
       {
