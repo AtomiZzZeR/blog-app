@@ -132,6 +132,20 @@ const Main = styled.main`
   padding: 0px 30px;
 `;
 
+const BoxForAuth = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+`;
+
+const UserId = styled.span`
+  display: inline-block;
+  font-size: 1.5em;
+  color: #fff;
+`;
+
 const StyledLayout = {
   Wrapper,
   Header,
@@ -142,6 +156,8 @@ const StyledLayout = {
   AddPostPageLink,
   BoxForIconAddPost,
   ProfilePageLink,
+  BoxForAuth,
   LogOutBtn,
+  UserId,
 };
 export default StyledLayout;

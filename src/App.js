@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout';
 import Loader from './components/Loader/Loader';
 import { authActionList, selectAuth } from './features/auth/authSlice';
 import { postsActionList } from './features/posts/postsSlice';
+import { sessionActionList } from './features/session/sessionSlice';
 
 import { privateRoutes, publicRoutes } from './router/routes';
 
@@ -23,6 +24,10 @@ function App() {
     }
 
     dispatch(authActionList.loading());
+  }, []);
+
+  useEffect(() => {
+    dispatch(sessionActionList.currentUserId());
   }, []);
 
   useEffect(() => {

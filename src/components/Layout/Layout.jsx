@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 import { authActionList, selectAuth } from '../../features/auth/authSlice';
-import Loader from '../Loader/Loader';
+import { selectSession, sessionActionList } from '../../features/session/sessionSlice';
 import Styled from './Layout.styles';
 
 const Layout = () => {
   const dispatch = useDispatch();
-
-  const authSelector = useSelector(selectAuth);
-
-  const { isLoading } = authSelector;
 
   const handleLogOutClick = () => {
     dispatch(authActionList.logOut());
     localStorage.setItem('auth', '');
   }
 
+  const [isInput, setIsInput] = useState(false);
+
+  const [value, setValue] = useState('');
+
+  const handleChangeUserClick = () => {
+    setIsInput(true);
+  }
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  }
+
+  const handleEnterUserIdBlur = () => {
+    if (value) {
+      dispatch(sessionActionList.changeUserId(value));
+    }
+    setValue('');
+    setIsInput(false);
+    window.location.reload()
+  }
+
   return (
     <>
       <Styled.Wrapper>
-        <Styled.LogOutBtn onClick={handleLogOutClick}>Выйти</Styled.LogOutBtn>
+        <Styled.BoxForAuth>
+          <Styled.UserId onClick={handleChangeUserClick}>Пользователь: id{localStorage.getItem('userId')}
+            {isInput ? <input value={value} onChange={handleChange} onBlur={handleEnterUserIdBlur} /> : null}
+          </Styled.UserId>
+          <Styled.LogOutBtn onClick={handleLogOutClick}>Выйти</Styled.LogOutBtn>
+        </Styled.BoxForAuth>
+
         <Styled.Header>
           <Styled.BoxForTitleAndHome>
             <Link to="/">

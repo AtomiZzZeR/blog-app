@@ -1,13 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  userId: '15',
+  userId: '1',
 };
 
 const sessionSlice = createSlice({
   name: 'session',
   initialState,
-  reducers: {},
+  reducers: {
+    currentUserId: (state) => {
+      state.userId = localStorage.getItem('userId');
+    },
+    changeUserId: (state, { payload }) => {
+      state.userId = payload;
+      localStorage.setItem('userId', state.userId);
+    },
+  },
 });
 
 export const sessionActionList = sessionSlice.actions;
