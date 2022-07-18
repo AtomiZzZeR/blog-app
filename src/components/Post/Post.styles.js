@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import plusIcon from '../../assets/images/plusIcon.svg';
 
 const Wrapper = styled.div`
   position: relative;
@@ -19,10 +20,31 @@ const Description = styled.div`
   font-size: 1.1em;
 `;
 
+const BoxForEditPost = styled.div`
+  text-align: center;
+`;
+
+const BtnEdit = styled.button`
+  position: absolute;
+  right: 75px;
+  top: 50px;
+  border-radius: 10px 10px 10px 10px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ff6b6b;
+  background-color: #222;
+  cursor: pointer;
+  background: url(${plusIcon});
+
+  display: inline-block;
+  font-size: 2.5em;
+  color: #ff6b6b;
+`;
+
 const BtnDelete = styled.button`
   position: absolute;
   right: 15px;
-  top: 43px;
+  top: 50px;
   border-radius: 10px 10px 10px 10px;
   width: 50px;
   height: 50px;
@@ -49,7 +71,9 @@ const StyledPost = {
   Wrapper,
   Title,
   Description,
+  BoxForEditPost,
   BtnDelete,
+  BtnEdit,
   TitleComments,
   ContainerForComments,
 };
