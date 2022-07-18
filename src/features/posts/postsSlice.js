@@ -73,6 +73,26 @@ const postsSlice = createSlice({
       state.postList = [...state.postList.filter((post) => post.id !== comment.postId), changedPost];
       localStorage.setItem('postList', JSON.stringify(state.postList));
     },
+    editComment: (state, { payload }) => {
+      const { postId, id, content } = payload;
+
+      const postFounded = state.postList.find((post) => post.id === postId);
+
+      const commentFounded = postFounded.commentList.find((comment) => comment.id === id);
+
+      const changedComment = {
+        ...commentFounded,
+        content,
+      };
+
+      const changedPost = {
+        ...postFounded,
+        commentList: [...postFounded.commentList.filter((comment) => comment.id !== id), changedComment],
+      };
+
+      state.postList = [...state.postList.filter((post) => post.id !== postId), changedPost];
+      localStorage.setItem('postList', JSON.stringify(state.postList));
+    },
     deleteComment: (state, { payload }) => {
       const { id, postId } = payload;
 
