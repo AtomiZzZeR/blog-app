@@ -20,6 +20,16 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: Arial, Helvetica, sans-serif; 
   }
+  body::-webkit-scrollbar {
+    width: 6px;         
+  }
+  body::-webkit-scrollbar-track {
+    background: #222;       
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #ff6b6b;    
+    border-radius: 50px;       
+  }
 
   a {
     text-decoration: none;
