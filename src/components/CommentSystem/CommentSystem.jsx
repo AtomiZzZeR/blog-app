@@ -3,8 +3,9 @@ import Styled from './CommentSystem.styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { postsActionList } from '../../features/posts/postsSlice';
 import { selectSession } from '../../features/session/sessionSlice';
+import { v4 as uuid } from 'uuid';
 
-const CommentSystem = ({ post: { id } }) => {
+const CommentSystem = ({ post }) => {
   const dispatch = useDispatch();
 
   const sessionSelector = useSelector(selectSession);
@@ -13,7 +14,7 @@ const CommentSystem = ({ post: { id } }) => {
 
   const [isFormComment, setIsFormComment] = useState(false);
 
-  const [value, setValue] = useState('');
+  const [content, setContent] = useState('');
 
   const [counter, setCounter] = useState(localStorage.getItem('counter') || "1");
 
@@ -22,18 +23,18 @@ const CommentSystem = ({ post: { id } }) => {
   }
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    setContent(e.target.value);
   }
 
   const handleAddCommentClick = (e) => {
     e.preventDefault();
 
     const comment = {
-      id: counter,
-      postId: id,
+      id: uuid(),
+      postId: post.id,
       userId,
-      value,
-      createData: Date.now(),
+      content,
+      creatingData: Date.now(),
     }
 
     dispatch(postsActionList.addComment({ comment }));
@@ -46,7 +47,7 @@ const CommentSystem = ({ post: { id } }) => {
 
     setIsFormComment(false);
 
-    setValue('');
+    setContent('');
   }
 
   return (
@@ -55,7 +56,7 @@ const CommentSystem = ({ post: { id } }) => {
       {
         isFormComment ?
           <form>
-            <input type={'text'} value={value} onChange={handleChange}></input>
+            <input type={'text'} value={content} onChange={handleChange}></input>
             <button onClick={handleAddCommentClick}>Отправить</button>
           </form> : null
       }

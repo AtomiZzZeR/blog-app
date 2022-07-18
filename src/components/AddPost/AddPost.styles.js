@@ -54,6 +54,7 @@ const Button = styled.button`
   background-color: #222;
   color: #fff;
   box-shadow: 0px 3px 1px 2px #ff6b6b;
+  cursor: pointer;
 `;
 
 const StyledAddPost = {

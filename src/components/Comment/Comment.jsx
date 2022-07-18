@@ -11,14 +11,14 @@ const Comment = ({ post }) => {
 
   const { userId: mainUserId } = sessionSelector;
 
-  return post.commentList.map(({ commentId, content, userId }) =>
-    <Styled.Wrapper key={commentId}>
+  return post.commentList.map(({ id, content, userId, creatingData }) =>
+    <Styled.Wrapper key={creatingData}>
       <div>Пользователь {userId}</div>
       {content}
       <br />
       {
         userId === mainUserId ? <Styled.BtnForDelete onClick={() =>
-          dispatch(postsActionList.deleteComment({ commentId, postId: post.id }))}>
+          dispatch(postsActionList.deleteComment({ id, postId: post.id }))}>
           Удалить
         </Styled.BtnForDelete>
           : null

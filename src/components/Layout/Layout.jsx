@@ -34,7 +34,7 @@ const Layout = () => {
           <Link to="/addPost">
             <Styled.AddPostPageLink>
               <Styled.BoxForIconAddPost>
-                <i class="fa-solid fa-circle-plus"></i>
+                <i className={'fa-solid fa-circle-plus'}></i>
               </Styled.BoxForIconAddPost>
               <span>Add Post</span>
             </Styled.AddPostPageLink>

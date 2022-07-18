@@ -44,7 +44,7 @@ const postsSlice = createSlice({
       localStorage.setItem('postList', JSON.stringify(state.postList));
     },
     addComment: (state, { payload }) => {
-      const { comment } = payload; 
+      const { comment } = payload;
 
       const postFounded = state.postList.find((post) => post.id === comment.postId);
 
@@ -57,13 +57,13 @@ const postsSlice = createSlice({
       localStorage.setItem('postList', JSON.stringify(state.postList));
     },
     deleteComment: (state, { payload }) => {
-      const { commentId, postId } = payload; 
+      const { id, postId } = payload;
 
       const postFounded = state.postList.find((post) => post.id === postId);
 
       const changedPost = {
         ...postFounded,
-        commentList: [...postFounded.commentList.filter((comment) => comment.commentId !== commentId)],
+        commentList: [...postFounded.commentList.filter((comment) => comment.id !== id)],
       };
 
       state.postList = [...state.postList.filter((post) => post.id !== postId), changedPost];

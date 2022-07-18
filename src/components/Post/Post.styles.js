@@ -34,7 +34,9 @@ const TitleComments = styled.div`
   margin: 0px 0px 0px 55px;
 `;
 
-const ContainerForComments = styled.div``;
+const ContainerForComments = styled.div`
+  margin: 0px 0px 40px;
+`;
 
 const StyledPost = {
   Wrapper,
