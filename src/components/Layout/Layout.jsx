@@ -32,7 +32,12 @@ const Layout = () => {
           </Styled.BoxForTitleAndHome>
 
           <Link to="/addPost">
-            <Styled.AddPostPageLink>Add Post</Styled.AddPostPageLink>
+            <Styled.AddPostPageLink>
+              <Styled.BoxForIconAddPost>
+                <i class="fa-solid fa-circle-plus"></i>
+              </Styled.BoxForIconAddPost>
+              <span>Add Post</span>
+            </Styled.AddPostPageLink>
           </Link>
 
           <Link to="/profile">
