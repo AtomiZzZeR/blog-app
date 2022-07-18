@@ -10,24 +10,25 @@ const AddPost = () => {
 
   const [post, setPost] = useState(
     {
-      title: sessionStorage.getItem('postTitle') || '',
-      description: sessionStorage.getItem('postDescription') || '',
+      title: '',
+      description: '',
+      likeList: [],
+      commentList: [], // userId, id, content
+      creatingData: 0,
     }
   );
 
   const handleChangePostTitle = (event) => {
     setPost({ ...post, title: event.target.value })
-    sessionStorage.setItem('postTitle', event.target.value);
   }
   const handleChangePostDescription = (event) => {
     setPost({ ...post, description: event.target.value });
-    sessionStorage.setItem('postDescription', event.target.value);
   }
 
   const handleAddPostClick = () => {
     const { validatePost } = postsValidationHelpers;
 
-    const createdPost = { id: uuid(), ...post };
+    const createdPost = { ...post, id: uuid(), creatingData: Date.now() };
 
     const error = validatePost(createdPost);
 
@@ -38,10 +39,7 @@ const AddPost = () => {
     } else {
       dispatch(postsActionList.addPost(createdPost));
 
-      sessionStorage.setItem('postTitle', '');
-      sessionStorage.setItem('postDescription', '');
-
-      setPost({ title: '', description: '' });
+      setPost({ ...post, title: '', description: '' });
 
       alert('Post added to the list');
     }
@@ -59,14 +57,14 @@ const AddPost = () => {
           onChange={handleChangePostTitle}
         />
       </div>
-      <div>
+      {/* <div>
         <span>Post topic:</span>
         <Styled.InputText type={'text'} placeholder={'Post topic'} />
       </div>
       <div>
         <span>Image upload:</span>
         <Styled.InputFile type={'file'} />
-      </div>
+      </div> */}
       <div>
         <span>Post description:</span>
         <Styled.InputText
