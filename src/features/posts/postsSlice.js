@@ -17,6 +17,20 @@ const postsSlice = createSlice({
       state.postList.push(action.payload);
       localStorage.setItem('postList', JSON.stringify(state.postList));
     },
+    editPost: (state, { payload }) => {
+      const { id, title, description } = payload;
+
+      const postFounded = state.postList.find((post) => post.id === id);
+
+      const changedPost = {
+        ...postFounded,
+        title,
+        description,
+      };
+
+      state.postList = [...state.postList.filter((post) => post.id !== id), changedPost];
+      localStorage.setItem('postList', JSON.stringify(state.postList));
+    },
     deletePost: (state, { payload }) => {
       const { postId } = payload;
 
