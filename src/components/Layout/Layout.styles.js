@@ -3,9 +3,8 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1500px;
-  margin: 0 auto;
-  height: 100%;
+  max-width: 1350px;
+  margin: 0px auto;
 `;
 
 const Header = styled.header`
@@ -100,7 +99,6 @@ const LogOutBtn = styled.button`
 const Main = styled.main`
   flex: 1 1 auto;
   margin: 15px 0px;
-  padding: 0px 30px;
 `;
 
 const Container = styled.div``;

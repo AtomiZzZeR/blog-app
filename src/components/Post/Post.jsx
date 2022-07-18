@@ -3,6 +3,8 @@ import Styled from './Post.styles';
 import { useDispatch } from 'react-redux';
 import LikeSystem from '../LikeSystem/LikeSystem';
 import { postsActionList } from '../../features/posts/postsSlice';
+import CommentSystem from '../CommentSystem/CommentSystem';
+import Comment from '../Comment/Comment';
 
 const Post = ({ number, post }) => {
   const dispatch = useDispatch();
@@ -12,20 +14,29 @@ const Post = ({ number, post }) => {
   }
 
   return (
-    <Styled.Post>
-      <Styled.Content>
-        <h2>
+    <>
+      <Styled.Wrapper>
+        <Styled.Title>
           {number}. {post.title}
-        </h2>
-        <div>
+        </Styled.Title>
+        <Styled.Description>
           {post.description}
-        </div>
-      </Styled.Content>
-      <Styled.Btns>
-        <button onClick={handleDeletePostClick}>Удалить</button>
-      </Styled.Btns>
-      <LikeSystem post={post} />
-    </Styled.Post>
+        </Styled.Description>
+        <Styled.BtnDelete onClick={handleDeletePostClick}>
+
+        </Styled.BtnDelete>
+
+        <LikeSystem post={post} />
+
+        <CommentSystem post={post} />
+
+
+      </Styled.Wrapper>
+      <Styled.ContainerForComments>
+        <Styled.TitleComments>Комментарии:</Styled.TitleComments>
+        <Comment post={post} />
+      </Styled.ContainerForComments>
+    </>
   );
 }
 
