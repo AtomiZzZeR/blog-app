@@ -3,8 +3,11 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 1500px;
   margin: 0 auto;
+  height: 300px;
+  width: 300px;
 `;
 
 const Header = styled.header`
@@ -121,13 +124,37 @@ const ProfilePageLink = styled.div`
   }
 `;
 
+const LogOutBtn = styled.button`
+  font-size: 1.8em;
+  width: 100px;
+  border-radius: 30px;
+`;
+
 const Main = styled.main`
   flex: 1 1 auto;
   margin: 15px 0px;
   padding: 0px 30px;
 `;
 
-const StyledLayout = {
+const BoxForAuth = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+`;
+
+const UserId = styled.span`
+  display: inline-block;
+  font-size: 1.5em;
+  color: #fff;
+`;
+
+const InputChangeUserId = styled.input`
+  font-size: 1.5em;
+`;
+
+const StyledPersonalAreaPage = {
   Wrapper,
   Header,
   Main,
@@ -137,5 +164,9 @@ const StyledLayout = {
   AddPostPageLink,
   BoxForIconAddPost,
   ProfilePageLink,
+  BoxForAuth,
+  LogOutBtn,
+  UserId,
+  InputChangeUserId,
 };
-export default StyledLayout;
+export default StyledPersonalAreaPage;

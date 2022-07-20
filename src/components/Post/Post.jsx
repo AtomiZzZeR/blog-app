@@ -6,7 +6,7 @@ import { postsActionList } from '../../features/posts/postsSlice';
 import CommentSystem from '../CommentSystem/CommentSystem';
 import { selectSession } from '../../features/session/sessionSlice';
 import Comment from '../Comment/Comment';
-import { isActivePostActionList, selectIsActivePost } from '../../features/isActivePost/isActivePost';
+import { isActivePostActionList, selectIsActivePost } from '../../features/isActivePost/isActivePostSlice';
 
 const Post = ({ number, post }) => {
   const dispatch = useDispatch();

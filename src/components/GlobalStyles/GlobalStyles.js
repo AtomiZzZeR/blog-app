@@ -39,6 +39,10 @@ const GlobalStyles = createGlobalStyle`
   .active {
     outline: none;
   }
+
+  button {
+    cursor: pointer;
+  }
   
 `;
 

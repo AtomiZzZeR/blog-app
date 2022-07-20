@@ -9,9 +9,14 @@ const Figure = styled.div`
   background-color: red;
 `;
 
+const Button = styled.div`
+  
+`;
+
 const StyledCommentSystem = {
   Wrapper,
   Figure,
+  Button,
 };
 
 export default StyledCommentSystem;

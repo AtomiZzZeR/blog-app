@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import plusIcon from '../../assets/images/plusIcon.svg';
 
 const Wrapper = styled.div`
   position: relative;
@@ -34,7 +33,6 @@ const BtnEdit = styled.button`
   border: 2px solid #ff6b6b;
   background-color: #222;
   cursor: pointer;
-  background: url(${plusIcon});
 
   display: inline-block;
   font-size: 2.5em;
