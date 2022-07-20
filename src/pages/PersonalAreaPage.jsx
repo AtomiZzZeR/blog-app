@@ -1,12 +1,14 @@
 import React from 'react';
 import Styled from './PersonalAreaPage.styles';
+import PersonalArea from '../components/PersonalArea/PersonalArea';
+
 
 const PersonalAreaPage = () => {
   return (
-    <Styled.PersonalArea>
-      (Здесь должен быть личный кабинет пользователя)
-    </Styled.PersonalArea>
-  );
+    <Styled.Wrapper>
+      <PersonalArea />
+    </Styled.Wrapper>
+  )
 }
 
 export default PersonalAreaPage;

@@ -1,26 +1,38 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { authActionList, selectAuth } from '../features/auth/authSlice';
+import { authActionList } from '../features/auth/authSlice';
 import Styled from './LoginPage.styles';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
 
-  const handleLoginClick = (e) => {
+  const handleSignInClick = (e) => {
     e.preventDefault();
     dispatch(authActionList.logIn());
     localStorage.setItem('auth', 'true');
   }
 
+  const auth = getAuth();
+
+  // signInWithEmailAndPassword(auth, email, 'adminadmin')
+  // .then((userCredential))
+
   return (
-    <Styled.Login>
-      <h1>Страница для логина</h1>
-      <form>
-        <Styled.Input type={'text'} placeholder={'Введите логин'} />
-        <Styled.Input type={'password'} placeholder={'Введите пароль'} />
-        <Styled.Button onClick={handleLoginClick}>Войти</Styled.Button>
-      </form>
-    </Styled.Login>
+    <Styled.Wrapper>
+      <Styled.BorderTwo>
+        <Styled.BorderOne>
+          <Styled.ContainerForLogin>
+            <Styled.Title>Sign in</Styled.Title>
+
+            <Styled.Input type={'text'} placeholder={'Enter login'} />
+            <Styled.Input type={'password'} placeholder={'Enter password'} />
+
+            <Styled.Button onClick={handleSignInClick}>Sign in</Styled.Button>
+          </Styled.ContainerForLogin>
+        </Styled.BorderOne>
+      </Styled.BorderTwo>
+    </Styled.Wrapper>
   );
 }
 

@@ -37,13 +37,6 @@ const Layout = () => {
   return (
     <>
       <Styled.Wrapper>
-        <Styled.BoxForAuth>
-          <Styled.UserId onClick={handleChangeUserClick}>Пользователь: id{localStorage.getItem('userId')}
-            {isInput ? <input value={value} onChange={handleChange} onBlur={handleEnterUserIdBlur} /> : null}
-          </Styled.UserId>
-          <Styled.LogOutBtn onClick={handleLogOutClick}>Выйти</Styled.LogOutBtn>
-        </Styled.BoxForAuth>
-
         <Styled.Header>
           <Styled.BoxForTitleAndHome>
             <Link to="/">
