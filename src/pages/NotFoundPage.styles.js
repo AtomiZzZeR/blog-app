@@ -6,7 +6,6 @@ const NotFound = styled.div`
   align-items: center;
   height: 100%;
   font-size: 5em;
-  color: #fff;
   text-transform: uppercase;
   font-weight: bold;
 `;

@@ -1,36 +1,38 @@
 import styled from 'styled-components';
 
+const colorOrange = '#ff6b6b';
+const colorBlack = '#222';
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: #fff;
   font-weight: bold;
   box-shadow: inset 0px 0px 100px 1px #000;
 `;
 
 const BorderOne = styled.div`
-  border: 5px solid #ff6b6b;
+  border: 5px solid ${colorOrange};
   padding: 50px;
   border-radius: 150px;
-  box-shadow: 0px -10px 1px 10px #ff6b6b;
+  box-shadow: 0px -10px 1px 10px ${colorOrange};
 `;
 
 const BorderTwo = styled.div`
-  border: 5px solid #ff6b6b;
+  border: 5px solid ${colorOrange};
   padding: 50px;
   border-radius: 200px;
-  box-shadow: 0px 10px 1px 10px #ff6b6b;
+  box-shadow: 0px 10px 1px 10px ${colorOrange};
 `;
 
 const ContainerForLogin = styled.div`
   display: flex;
   flex-direction: column;
-  border: 5px solid #ff6b6b;
+  border: 5px solid ${colorOrange};
   border-radius: 100px;
   padding: 30px 50px;
-  box-shadow: 0px 10px 1px 10px #ff6b6b;
+  box-shadow: 0px 10px 1px 10px ${colorOrange};
 `;
 
 const Title = styled.h1`
@@ -38,7 +40,7 @@ const Title = styled.h1`
   width: 230px;
   text-align: center;
   margin: 0px auto 15px;
-  border-bottom: 2px solid #ff6b6b;
+  border-bottom: 2px solid ${colorOrange};
 `;
 
 const Input = styled.input`
@@ -47,7 +49,7 @@ const Input = styled.input`
   border-radius: 30px;
   margin: 0px 0px 15px 0px;
   font-weight: bold;
-  color: #222;
+  color: ${colorBlack};
 
   &:focus {
     outline: none;
@@ -61,7 +63,7 @@ const Button = styled.button`
   margin: 0px auto;
   width: 230px;
   font-weight: bold;
-  color: #222;
+  color: ${colorBlack};
   cursor: pointer;
 `;
 

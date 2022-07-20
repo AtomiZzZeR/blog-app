@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
+const colorOrange = '#ff6b6b';
+const colorBlack = '#222';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
   justify-content: center;
-  margin: 0px 0px 40px 0px;
+  margin: 40px 0px 40px 0px;
   width: 750px;
-  padding: 5px 30px;
+  padding: 15px;
+  border-radius: 100px;
+  border: 5px solid ${colorOrange};
+  box-shadow: 0px 10px 1px 10px ${colorOrange};
 `;
 
 const Title = styled.div`
@@ -16,8 +22,7 @@ const Title = styled.div`
   width: 320px;
   margin: 0px auto 15px;
   padding: 0px 0px 15px 0px;
-  border-bottom: 3px solid #ff6b6b;
-  color: #fff;
+  border-bottom: 3px solid ${colorOrange};
   font-weight: bold;
 `;
 
@@ -27,8 +32,8 @@ const InputTitle = styled.input`
   margin: 0px auto 13px;
   padding: 5px 5px 5px 10px;
   border-radius: 50px;
-  border: 2px solid #ff6b6b;
-  color: #222;
+  border: 2px solid ${colorOrange};
+  color: ${colorBlack};
   font-weight: bold;
   width: 330px;
 
@@ -39,16 +44,17 @@ const InputTitle = styled.input`
 
 const TextAreaDescription = styled.textarea`
   display: inline-block;
-  font-size: 1.7em;
+  font-size: 1.3em;
   margin: 0px auto 13px;
-  padding: 15px;
-  border-radius: 50px;
-  border: 2px solid #ff6b6b;
-  color: #222;
+  padding: 8px;
+  border-radius: 15px;
+  border: 2px solid ${colorOrange};
+  color: ${colorBlack};
   font-weight: bold;
   resize: none;
   width: 500px;
   height: 280px;
+  font-family: Arial, Helvetica, sans-serif;
 
   &:focus {
     outline: none;
@@ -60,7 +66,7 @@ const TextAreaDescription = styled.textarea`
 //   margin-bottom: 13px;
 //   padding: 5px 5px 5px 10px;
 //   border-radius: 50px;
-//   border: 2px solid #ff6b6b;
+//   border: 2px solid ${colorOrange};
 //   font-weight: bold;
 
 //   &:focus {
@@ -71,16 +77,16 @@ const TextAreaDescription = styled.textarea`
 const BoxForButton = styled.div`
   width: 100%;
   text-align: center;
+  margin: 0px 0px 15px 0px;
 `;
 
 const Button = styled.button`
   font-size: 2em;
   border-radius: 50px;
   padding: 2px 25px;
-  border: 2px solid #ff6b6b;
-  background-color: #222;
-  color: #fff;
-  box-shadow: 0px 3px 1px 2px #ff6b6b;
+  border: 2px solid ${colorOrange};
+  background-color: ${colorBlack};
+  box-shadow: 0px 3px 1px 2px ${colorOrange};
   cursor: pointer;
 `;
 

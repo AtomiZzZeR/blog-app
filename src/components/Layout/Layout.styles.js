@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
+const colorOrange = '#ff6b6b';
+const colorBlack = '#222';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1500px;
   margin: 0 auto;
+  height: 100%;
 `;
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 85px;
+  min-height: 85px;
   margin: 15px 0px 0px 0px;
   padding: 0px 25px;
   border-radius: 50px;
-  background: rgb(255, 107, 107);
-  background: linear-gradient(90deg, rgba(255, 107, 107, 1) 0%, rgba(255, 107, 107, 1) 37%, rgba(85, 98, 112, 1) 100%);
+  background: ${colorOrange};
+  background: linear-gradient(90deg, ${colorOrange} 0%, ${colorOrange} 37%, rgba(85, 98, 112, 1) 100%);
 `;
 
 const BoxForTitleAndHome = styled.div`
@@ -26,30 +30,30 @@ const BoxForTitleAndHome = styled.div`
 
 const SiteTitle = styled.h1`
   padding: 7px 11px 7px 16px;
-  color: #222;
+  color: ${colorBlack};
   font-weight: bold;
   font-size: 1.65em;
   transition: 0.5s;
   border-radius: 100px 0px 0px 100px;
 
   &:hover {
-    color: #ff6b6b;
-    background-color: #222;
+    color: ${colorOrange};
+    background-color: ${colorBlack};
   }
 `;
 
 const HomePageLink = styled.div`
   padding: 7px 15px 7px 8px;
-  color: #222;
+  color: ${colorBlack};
   font-weight: bold;
   font-size: 1.65em;
   transition: 0.5s;
   border-radius: 0px 100px 100px 0px;
-  border-left: 5px solid #222;
+  border-left: 5px solid ${colorBlack};
 
   &:hover {
-    color: #ff6b6b;
-    background-color: #222;
+    color: ${colorOrange};
+    background-color: ${colorBlack};
   }
 
   &:active {
@@ -62,16 +66,16 @@ const AddPostPageLink = styled.div`
   align-items: center;
   margin: 0px 137px 0px 0px;
   padding: 6px 10px;
-  color: #222;
+  color: ${colorBlack};
   font-weight: bold;
   font-size: 1.65em;
   transition: 0.5s;
   border-radius: 30px;
-  border: 4px solid #222;
+  border: 4px solid ${colorBlack};
 
   &:hover {
-    background-color: #222;
-    color: #ff6b6b;
+    background-color: ${colorBlack};
+    color: ${colorOrange};
   }
 
   & span {
@@ -103,15 +107,15 @@ const BoxForIconAddPost = styled.div`
 
 const ProfilePageLink = styled.div`
   padding: 7px 13px 4px;
-  color: #222;
+  color: ${colorBlack};
   font-weight: bold;
   font-size: 1.65em;
   transition: 0.8s;
-  border-bottom: 5px solid #222;
+  border-bottom: 5px solid ${colorBlack};
 
   &:hover {
     color: #556270;
-    background-color: #222;
+    background-color: ${colorBlack};
     border-radius: 100px;
     border-bottom: 5px solid #333;
   }

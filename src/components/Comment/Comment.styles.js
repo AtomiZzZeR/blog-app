@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
+const colorOrange = '#ff6b6b';
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px dashed #ff6b6b;
+  border: 2px dashed ${colorOrange};
   padding: 15px 30px;
   margin: 30px;
   border-radius: 15px;

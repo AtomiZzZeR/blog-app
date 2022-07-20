@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const colorOrange = '#ff6b6b';
+
 const Wrapper = styled.div`
   display: flex;
   width: 45px;
@@ -12,7 +14,7 @@ const Badge = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 50px;
-  background-color: #ff6b6b;
+  background-color: ${colorOrange};
   transition: 0.2s;
 
   &:active {
@@ -21,7 +23,6 @@ const Badge = styled.div`
 `;
 
 const Counter = styled.div`
-  color: #fff;
   font-size: 1.3em;
   display: inline-block;
 `;

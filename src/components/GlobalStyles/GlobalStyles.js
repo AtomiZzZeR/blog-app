@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
+const colorOrange = '#ff6b6b';
+const colorBlack = '#222';
+
 const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
@@ -14,20 +17,22 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background-color: #222;
+    background-color: ${colorBlack};
   }
 
   body {
     font-family: Arial, Helvetica, sans-serif; 
+    color: #fff;
+    font-weight: bold;
   }
   body::-webkit-scrollbar {
     width: 6px;         
   }
   body::-webkit-scrollbar-track {
-    background: #222;       
+    background: ${colorBlack};
   }
   body::-webkit-scrollbar-thumb {
-    background-color: #ff6b6b;    
+    background-color: ${colorOrange};    
     border-radius: 50px;       
   }
 
